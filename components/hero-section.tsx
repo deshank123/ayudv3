@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
+import Image from 'next/image'
 
 export function HeroSection() {
   return (
@@ -46,10 +47,13 @@ export function HeroSection() {
           <div className="relative">
             <div className="absolute -top-20 -right-20 w-40 h-40 bg-[#E4B04A] opacity-10 rounded-full" />
             <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-[#2F3B2F] opacity-10 rounded-full" />
-            <img
-              src={`/placeholder.svg?height=600&width=600`}
+            <Image
+              src="/placeholder.svg?height=600&width=600"
               alt="Ayurvedic Treatment"
               className="relative z-10 rounded-lg shadow-xl"
+              width={600}
+              height={600}
+              priority={true}
             />
           </div>
         </div>
