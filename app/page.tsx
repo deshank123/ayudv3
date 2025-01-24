@@ -2,12 +2,22 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { shlokas } from "./data/shlokas";
+import { testimonials, blogPosts } from "@/lib/data";
+import { NatureAnimations } from '@/components/NatureAnimations';
+import { AyurvedicClock } from '@/components/AyurvedicClock';
+import { ScrollReveal } from '@/components/ScrollReveal';
+import { HeroSlideshow } from '@/components/HeroSlideshow';
 
 export default function Home() {
   return (
     <main className="min-h-screen">
+      <HeroSlideshow />
+      
+      {/* Add NatureAnimations at the top level */}
+      <NatureAnimations />
+      
       {/* Hero Section */}
-      <section className="relative h-[90vh] flex items-center justify-center">
+      {/* <section className="relative h-[90vh] flex items-center justify-center">
         <Image
           src="https://images.unsplash.com/photo-1545205597-3d9d02c29597"
           alt="Ayurvedic herbs and treatments"
@@ -15,7 +25,7 @@ export default function Home() {
           className="object-cover brightness-50"
           priority
         />
-        <div className="relative z-10 text-center text-white px-4">
+        <ScrollReveal className="relative z-10 text-center text-white px-4">
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
             Ancient Wisdom for Modern Wellness
           </h1>
@@ -27,29 +37,49 @@ export default function Home() {
               Explore Treatments
             </Button>
           </Link>
+        </ScrollReveal>
+      </section> */}
+
+      {/* Shlokas Section */}
+      <section className="py-16 bg-white/80 backdrop-blur-sm">
+        <div className="container mx-auto px-4">
+          <ScrollReveal>
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-[#2F3B2F]">
+              Ancient Wisdom
+            </h2>
+          </ScrollReveal>
+          <div className="grid md:grid-cols-3 gap-8">
+            {shlokas.map((shloka, index) => (
+              <ScrollReveal key={index} className="h-full">
+                <div className="bg-white/90 p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 h-full backdrop-blur-sm border border-[#2F3B2F]/10">
+                  <p className="text-xl font-semibold text-[#2F3B2F] mb-3">
+                    {shloka.sanskrit}
+                  </p>
+                  <p className="text-gray-600 mb-2">{shloka.translation}</p>
+                  <p className="text-sm text-gray-500 italic">{shloka.meaning}</p>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Shlokas Section */}
-      <section className="py-16 bg-stone-50">
+      {/* Ayurvedic Clock Section */}
+      <section className="py-20 bg-white/90 backdrop-blur-sm relative z-10">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-            Ancient Wisdom
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {shlokas.map((shloka, index) => (
-              <div
-                key={index}
-                className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
-              >
-                <p className="text-xl font-semibold text-primary mb-3">
-                  {shloka.sanskrit}
-                </p>
-                <p className="text-gray-600 mb-2">{shloka.translation}</p>
-                <p className="text-sm text-gray-500 italic">{shloka.meaning}</p>
-              </div>
-            ))}
-          </div>
+          <ScrollReveal>
+            <h2 className="text-3xl md:text-4xl font-bold text-center text-[#2F3B2F] mb-8">
+              Daily Wellness Guide
+            </h2>
+            <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+              Align your daily routine with nature's rhythm for optimal health and well-being
+            </p>
+          </ScrollReveal>
+          <ScrollReveal className="max-w-4xl mx-auto">
+            <div className="bg-[#F5F0E6]/80 rounded-lg shadow-lg p-8 backdrop-blur-sm">
+              <AyurvedicClock />
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
@@ -123,6 +153,39 @@ export default function Home() {
                 Personalized care from certified Ayurvedic doctors
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-16 bg-[#F5F0E6]/80 backdrop-blur-sm relative z-10">
+        <div className="container mx-auto px-4">
+          <ScrollReveal>
+            <h2 className="text-3xl md:text-4xl font-bold text-center text-[#2F3B2F] mb-12">
+              Patient Stories
+            </h2>
+          </ScrollReveal>
+          <div className="grid md:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <ScrollReveal key={index}>
+                <div className="bg-white/90 p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 backdrop-blur-sm">
+                  <div className="flex items-center mb-4">
+                    <Image
+                      src={testimonial.image}
+                      alt={testimonial.name}
+                      width={60}
+                      height={60}
+                      className="rounded-full"
+                    />
+                    <div className="ml-4">
+                      <h4 className="font-semibold text-[#2F3B2F]">{testimonial.name}</h4>
+                      <p className="text-sm text-gray-500">{testimonial.condition}</p>
+                    </div>
+                  </div>
+                  <p className="text-gray-600 italic">{testimonial.quote}</p>
+                </div>
+              </ScrollReveal>
+            ))}
           </div>
         </div>
       </section>
