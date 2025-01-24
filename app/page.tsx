@@ -1,19 +1,17 @@
+'use client';
+
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
-import { shlokas } from "./data/shlokas";
-import { testimonials, blogPosts } from "@/lib/data";
-import { NatureAnimations } from '@/components/NatureAnimations';
-import { AyurvedicClock } from '@/components/AyurvedicClock';
-import { ScrollReveal } from '@/components/ScrollReveal';
 import { HeroSlideshow } from '@/components/HeroSlideshow';
+import { NatureAnimations } from '@/components/NatureAnimations';
+import { ScrollReveal } from '@/components/ScrollReveal';
+import { AyurvedicClock } from '@/components/AyurvedicClock';
+import { shlokas } from "@/app/data/shlokas";
+import { testimonials } from "@/lib/data";
 
 export default function Home() {
   return (
     <main className="min-h-screen">
       <HeroSlideshow />
-      
-      {/* Add NatureAnimations at the top level */}
       <NatureAnimations />
       
       {/* Hero Section */}

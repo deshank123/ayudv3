@@ -2,14 +2,20 @@ import { getBlogPost, getAllBlogPosts } from '@/lib/mdx';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 
+interface Props {
+  params: {
+    slug: string;
+  };
+}
+
 export async function generateStaticParams() {
   const posts = await getAllBlogPosts();
-  return posts.map((post: any) => ({
+  return posts.map((post) => ({
     slug: post.slug,
   }));
 }
 
-export default async function BlogPost({ params }: { params: { slug: string } }) {
+export default async function BlogPostPage({ params }: Props) {
   const post = await getBlogPost(params.slug);
   
   if (!post) {
@@ -18,13 +24,16 @@ export default async function BlogPost({ params }: { params: { slug: string } })
 
   const { source, frontMatter } = post;
 
+  // Add fallback image
+  const imageUrl = frontMatter.image || '/placeholder.jpg';
+
   return (
     <main className="bg-[#F5F0E6] min-h-screen">
       <article className="container mx-auto px-4 py-16">
         <div className="max-w-3xl mx-auto">
           <div className="relative h-[400px] mb-8">
             <Image
-              src={frontMatter.image}
+              src={imageUrl}
               alt={frontMatter.title}
               fill
               className="object-cover rounded-lg"

@@ -1,14 +1,27 @@
+import { getAllBlogPosts } from '@/lib/mdx';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Image from "next/image";
 import Link from "next/link";
-import { blogPosts } from "@/lib/data";
+
+interface BlogPost {
+  title: string;
+  date: string;
+  excerpt?: string;
+  category?: string;
+  readTime?: string;
+  image?: string;
+  slug: string;
+}
 
 export const metadata = {
   title: "Blog | Holistic Healing Center",
   description: "Explore Ayurvedic wisdom, self-care tips, and healing practices",
 }
 
-export default function BlogPage() {
+export default async function BlogPage() {
+  const blogPosts = await getAllBlogPosts() as BlogPost[];
+  const defaultImage = "/placeholder.jpg";
+
   return (
     <main className="min-h-screen bg-[#F5F0E6]">
       {/* Hero Section */}
@@ -27,7 +40,7 @@ export default function BlogPage() {
             <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow">
               <div className="relative h-48">
                 <Image
-                  src={post.image}
+                  src={post.image || defaultImage}
                   alt={post.title}
                   fill
                   className="object-cover"

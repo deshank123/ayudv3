@@ -1,13 +1,13 @@
 'use client';
 
 import Link from "next/link"
-import { Phone, Mail, Home } from 'lucide-react'
+import { Phone, Mail } from 'lucide-react'
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 import { Button } from "@/components/ui/button"
-import { NavigationMenu, NavigationMenuList, NavigationMenuItem, NavigationMenuLink } from "@/components/ui/navigation-menu"
+import { NavigationMenu, NavigationMenuList, NavigationMenuItem } from "@/components/ui/navigation-menu"
 
 const navigation = [
   { name: "Home", href: "/" },

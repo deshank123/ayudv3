@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
@@ -58,31 +58,34 @@ const slideVariants = {
 };
 
 export function HeroSlideshow() {
-  const [[page, direction], setPage] = useState([0, 0]);
+  const [page, setPage] = useState([0, 0]);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
-  const slideIndex = Math.abs(page % slides.length);
+  const paginate = useCallback((newDirection: number) => {
+    const newIndex = page[0] + newDirection;
+    if (newIndex < 0) {
+      setPage([slides.length - 1, newDirection]);
+    } else if (newIndex >= slides.length) {
+      setPage([0, newDirection]);
+    } else {
+      setPage([newIndex, newDirection]);
+    }
+  }, [page]);
 
   useEffect(() => {
     if (!isAutoPlaying) return;
-
-    const timer = setInterval(() => {
-      paginate(1);
-    }, 5000);
-
+    const timer = setInterval(() => paginate(1), 5000);
     return () => clearInterval(timer);
-  }, [isAutoPlaying, page]);
+  }, [isAutoPlaying, paginate]);
 
-  const paginate = (newDirection: number) => {
-    setPage([page + newDirection, newDirection]);
-  };
+  const slideIndex = Math.abs(page[0] % slides.length);
 
   return (
     <div className="relative h-[90vh] overflow-hidden">
       <AnimatePresence mode="wait">
         <motion.div
-          key={page}
-          custom={direction}
+          key={page[0]}
+          custom={page[1]}
           variants={slideVariants}
           initial="enter"
           animate="center"

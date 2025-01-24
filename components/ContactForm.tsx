@@ -9,6 +9,7 @@ export function ContactForm() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
     message: ''
   });
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
@@ -29,10 +30,10 @@ export function ContactForm() {
       if (!response.ok) throw new Error('Failed to send message');
 
       setStatus('success');
-      setFormData({ name: '', email: '', message: '' });
-      
+      setFormData({ name: '', email: '', phone: '', message: '' });
       setTimeout(() => setStatus('idle'), 3000);
     } catch (error) {
+      console.error('Contact form error:', error);
       setStatus('error');
       setTimeout(() => setStatus('idle'), 3000);
     }
@@ -40,32 +41,33 @@ export function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
-      <div>
-        <Input
-          placeholder="Your Name"
-          value={formData.name}
-          onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
-          required
-        />
-      </div>
-      <div>
-        <Input
-          type="email"
-          placeholder="Your Email"
-          value={formData.email}
-          onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
-          required
-        />
-      </div>
-      <div>
-        <Textarea
-          placeholder="Your Message"
-          value={formData.message}
-          onChange={(e) => setFormData(prev => ({ ...prev, message: e.target.value }))}
-          required
-          className="min-h-[150px]"
-        />
-      </div>
+      <Input
+        placeholder="Your Name"
+        value={formData.name}
+        onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
+        required
+      />
+      <Input
+        type="email"
+        placeholder="Your Email"
+        value={formData.email}
+        onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
+        required
+      />
+      <Input
+        type="tel"
+        placeholder="Your Phone"
+        value={formData.phone}
+        onChange={(e) => setFormData(prev => ({ ...prev, phone: e.target.value }))}
+        required
+      />
+      <Textarea
+        placeholder="Your Message"
+        value={formData.message}
+        onChange={(e) => setFormData(prev => ({ ...prev, message: e.target.value }))}
+        required
+        className="min-h-[150px]"
+      />
       <Button 
         type="submit" 
         className="w-full bg-[#2F3B2F] hover:bg-[#2F3B2F]/90"
