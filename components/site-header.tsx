@@ -15,7 +15,7 @@ const navigation = [
   { name: "Ayurveda", href: "/ayurveda" },
   { name: "Treatment", href: "/treatment" },
   { name: "Blog", href: "/blog" },
-  { name: "Dosha Quiz", href: "/dosha-quiz" },
+  // { name: "Dosha Quiz", href: "/dosha-quiz" },
   { name: "Contact", href: "/contact" },
 ];
 
@@ -51,18 +51,25 @@ export function SiteHeader() {
           <div className="flex items-center space-x-6">
             <div className="flex items-center">
               <Phone className="h-4 w-4 mr-2" />
-              <span>+91 98765 43210</span>
+              <span>+91 99887 72355</span>
             </div>
             <div className="hidden md:flex items-center">
               <Mail className="h-4 w-4 mr-2" />
-              <span>Holistic Healing Center, Wellness City, India</span>
+              <span>Rishi Ayurveda Centre, Patiala</span>
             </div>
           </div>
           <div className="flex items-center space-x-4">
-            <Link href="#" className="hover:text-gold">Facebook</Link>
-            <Link href="#" className="hover:text-gold">Twitter</Link>
-            <Link href="#" className="hover:text-gold">LinkedIn</Link>
-            <Link href="#" className="hover:text-gold">Blog</Link>
+            {/* <Link href="" className="https://www.facebook.com/rishiayurvedapatiala">Facebook</Link>
+            <Link href="" className="https://www.instagram.com/rishiayurvedacentre?igsh=YWZ3Z2VndWFkYm1k">Instagram</Link> */}
+            <Link href="https://www.facebook.com/rishiayurvedapatiala" target="_blank" rel="noopener noreferrer" className="hover:text-[#E4B04A]">
+  Facebook
+</Link>
+
+<Link href="https://www.instagram.com/rishiayurvedacentre?igsh=YWZ3Z2VndWFkYm1k" target="_blank" rel="noopener noreferrer" className="hover:text-[#E4B04A]">
+  Instagram
+</Link>
+            {/* <Link href="#" className="hover:text-gold">LinkedIn</Link> */}
+            {/* <Link href="#" className="hover:text-gold">Blog</Link> */}
           </div>
         </div>
       </div>

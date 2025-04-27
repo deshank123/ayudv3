@@ -60,7 +60,7 @@ export default function ContactPage() {
                 <CardContent className="space-y-4">
                   <div className="flex items-center space-x-4">
                     <Phone className="text-[#E4B04A]" />
-                    <span>+91 98765 43210</span>
+                    <span>+91 99887 72355</span>
                   </div>
                   <div className="flex items-center space-x-4">
                     <Mail className="text-[#E4B04A]" />
@@ -68,7 +68,31 @@ export default function ContactPage() {
                   </div>
                   <div className="flex items-center space-x-4">
                     <MapPin className="text-[#E4B04A]" />
-                    <span>123 Ayurveda Street, Wellness City, India 110001</span>
+                    <span>Rishi Ayurveda Centre, Opposite Dhindsa Petrol Pump, Bhadson Road Patiala(Punjab)</span>
+                  </div>
+                  {/* ➡️ New Facebook Button */}
+                  <div className="pt-4">
+                    <a
+                      href="https://www.facebook.com/rishiayurvedapatiala"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center px-4 py-2 bg-[#1877F2] text-white rounded hover:bg-[#145db2] transition"
+                    >
+                      Visit us on Facebook
+
+                    
+                    </a>
+                  </div>
+                  {/* ➡️ Instagram Button */}
+                  <div>
+                    <a
+                      href="https://www.instagram.com/rishiayurvedacentre?igsh=YWZ3Z2VndWFkYm1k"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 text-white rounded hover:opacity-90 transition"
+                    >
+                      Visit us on Instagram
+                    </a>
                   </div>
                 </CardContent>
               </Card>
@@ -85,8 +109,22 @@ export default function ContactPage() {
             </div>
           </div>
         </div>
+        </div>
+        {/* Google Maps Location Embed */}
+<div className="w-full mt-12">
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3442.4570465224065!2d76.36513377486327!3d30.366377103247263!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391027268c8ed241%3A0x747506de03b8145f!2sRishi%20Ayurveda%20Centre!5e0!3m2!1sen!2sin!4v1745746240042!5m2!1sen!2sin"
+    width="100%"
+    height="450"
+    style={{ border: 0 }}
+    allowFullScreen
+    loading="lazy"
+    referrerPolicy="no-referrer-when-downgrade"
+  ></iframe>
+
       </div>
     </main>
   )
 }
+
 

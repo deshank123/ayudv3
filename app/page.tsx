@@ -37,6 +37,47 @@ export default function Home() {
           </Link>
         </ScrollReveal>
       </section> */}
+  
+{/* Doctor's Specialities Section */}
+<section className="py-20 bg-white">
+  <div className="container mx-auto px-4">
+    <div className="grid md:grid-cols-2 gap-16 items-center">
+      
+      {/* Doctor Image */}
+      <div className="flex justify-center">
+        <div className="w-96 h-[500px] relative rounded-xl overflow-hidden shadow-xl">
+          <Image
+            src="/self_photo.jpeg" // your actual image
+            alt="Dr. Tejinder Rishi"
+            layout="fill"
+            objectFit="cover"
+            className="rounded-xl"
+          />
+        </div>
+      </div>
+
+      {/* Doctor Information */}
+      <div className="space-y-6">
+        <h2 className="text-3xl md:text-4xl font-bold text-[#2F3B2F]">Meet Our Expert</h2>
+        <p className="text-[#E4B04A] text-lg md:text-xl font-semibold">Dr. Tejinder Rishi (B.A.M.S.)</p>
+        <p className="text-gray-700 text-base md:text-lg leading-relaxed">
+          With over 20 years of experience in Ayurveda, Dr. Tejinder Rishi blends ancient wisdom
+          with modern healing for holistic health solutions. Below are his areas of specialization:
+        </p>
+        <ul className="list-disc list-inside space-y-2 text-gray-700 text-base md:text-lg">
+          <li>Ayurvedic OPD</li>
+          <li>Female Infertility</li>
+          <li>Male Infertility</li>
+          <li>Arthritis</li>
+          <li>Skin Diseases</li>
+          <li>Diabetes</li> {/* Fixed spelling here */}
+          <li>Hypertension</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
 
       {/* Shlokas Section */}
       <section className="py-16 bg-white/80 backdrop-blur-sm">
@@ -61,12 +102,15 @@ export default function Home() {
           </div>
         </div>
       </section>
+      
 
       {/* Ayurvedic Clock Section */}
       <section className="py-20 bg-white/90 backdrop-blur-sm relative z-10">
         <div className="container mx-auto px-4">
           <ScrollReveal>
             <h2 className="text-3xl md:text-4xl font-bold text-center text-[#2F3B2F] mb-8">
+
+
               Daily Wellness Guide
             </h2>
             <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">

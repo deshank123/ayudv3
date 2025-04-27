@@ -12,7 +12,7 @@ export default function AboutUs() {
       {/* Hero Section */}
       <div className="relative bg-[#2F3B2F] text-white py-20">
         <div className="container mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">About Sanjivani Ayurvedshala</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">About Rishi Ayurveda Centre</h1>
           <p className="text-lg text-[#E4B04A]">Healing through ancient wisdom and modern expertise</p>
         </div>
         <div className="absolute bottom-0 left-0 w-full h-16 bg-[#F5F0E6] clip-path-slant" />
@@ -24,8 +24,8 @@ export default function AboutUs() {
           <div className="space-y-6">
             <h2 className="text-3xl font-bold text-[#2F3B2F]">Our Journey</h2>
             <p className="text-gray-700">
-              Founded in 1977, Sanjivani Ayurvedshala has been at the forefront of Ayurvedic
-              treatment for over four decades. What started as a small clinic has grown into
+              Founded in 2010, Rishi Ayurveda Centre has been at the forefront of Ayurvedic
+              treatment for over two decades. What started as a small clinic has grown into
               one of the most respected Ayurvedic institutions in the region.
             </p>
             <p className="text-gray-700">
@@ -36,7 +36,7 @@ export default function AboutUs() {
           </div>
           <div className="relative h-[400px] rounded-lg overflow-hidden shadow-xl">
             <Image
-              src="/placeholder.svg"
+              src="/logo.jpeg"
               alt="Clinic exterior"
               fill
               className="object-cover"
@@ -80,18 +80,18 @@ export default function AboutUs() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="relative h-[500px] rounded-lg overflow-hidden">
               <Image
-                src="/placeholder.svg"
+                src="/clinic_photo.jpeg"
                 alt="Dr. Vatsyayan"
                 fill
                 className="object-cover"
               />
             </div>
             <div className="space-y-6">
-              <h2 className="text-3xl font-bold text-[#2F3B2F]">Dr. Vatsyayan</h2>
-              <p className="text-[#E4B04A] text-lg">Chief Ayurvedic Physician</p>
+              <h2 className="text-3xl font-bold text-[#2F3B2F]">Dr. Tejinder Rishi</h2>
+              <p className="text-[#E4B04A] text-lg">B.A.M.S.</p>
               <div className="space-y-4 text-gray-700">
                 <p>
-                  With over 46 years of clinical experience, Dr. Vatsyayan has dedicated
+                  With over 20 years of clinical experience, Dr. Tejinder Rishi has dedicated
                   his life to the practice and advancement of Ayurvedic medicine.
                 </p>
                 <p>
@@ -118,11 +118,11 @@ export default function AboutUs() {
         {/* Statistics */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           <div className="text-center">
-            <div className="text-4xl font-bold text-[#E4B04A]">46+</div>
+            <div className="text-4xl font-bold text-[#E4B04A]">20+</div>
             <div className="text-[#2F3B2F]">Years Experience</div>
           </div>
           <div className="text-center">
-            <div className="text-4xl font-bold text-[#E4B04A]">15000+</div>
+            <div className="text-4xl font-bold text-[#E4B04A]">5000+</div>
             <div className="text-[#2F3B2F]">Patients Treated</div>
           </div>
           <div className="text-center">
