@@ -9,7 +9,7 @@ const cormorant = Cormorant_Garamond({
 })
 
 export const metadata = {
-  title: "Sanjivani Ayurvedshala - Ayurvedic Healing Center",
+  title: "Rishi Ayurveda Center - Ayurvedic Healing Center",
   description: "Experience authentic Ayurvedic treatments and holistic healing",
 }
 

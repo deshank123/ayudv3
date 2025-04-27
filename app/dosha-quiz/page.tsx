@@ -1,7 +1,7 @@
 import DoshaQuiz from "@/components/DoshaQuiz/DoshaQuiz";
 
 export const metadata = {
-  title: 'Dosha Quiz | Sanjivani Ayurvedshala',
+  title: 'Dosha Quiz |  Ayurvedshala',
   description: 'Discover your Ayurvedic body type with our dosha quiz',
 };
 

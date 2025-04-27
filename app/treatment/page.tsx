@@ -2,7 +2,7 @@ import Image from 'next/image'
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 export const metadata = {
-  title: "Our Treatments | Sanjivani Ayurvedshala",
+  title: "Our Treatments | Rishi Ayurveda Center",
   description: "Explore our range of authentic Ayurvedic treatments for holistic healing and wellness",
 }
 
