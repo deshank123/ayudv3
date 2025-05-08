@@ -8,11 +8,11 @@ import Link from 'next/link';
 
 const slides = [
   {
-    image: "https://images.unsplash.com/photo-1545205597-3d9d02c29597",
+    image: "/aboutus/logo.jpeg",
     title: "Ancient Wisdom for Modern Wellness",
     description: "Experience authentic Ayurvedic treatments for holistic healing",
     service: "Panchakarma Therapy",
-    serviceDescription: "Traditional detoxification and rejuvenation treatments"
+    serviceDescription: "Traditional detoxification and reju  venation treatments"
   },
   {
     image: "https://images.unsplash.com/photo-1552693673-1bf958298935",

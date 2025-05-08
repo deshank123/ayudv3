@@ -1,6 +1,7 @@
 'use client';
 
 import Image from "next/image";
+import imagePath from '@/app/aboutus/logo.jpeg';
 import { HeroSlideshow } from '@/components/HeroSlideshow';
 import { NatureAnimations } from '@/components/NatureAnimations';
 import { ScrollReveal } from '@/components/ScrollReveal';
@@ -17,11 +18,16 @@ export default function Home() {
       {/* Hero Section */}
       {/* <section className="relative h-[90vh] flex items-center justify-center">
         <Image
-          src="https://images.unsplash.com/photo-1545205597-3d9d02c29597"
+          src="/aboutus/logo.jpeg"
           alt="Ayurvedic herbs and treatments"
-          fill
-          className="object-cover brightness-50"
-          priority
+          // fill
+          // className="object-contain brightness-50 bg-black"
+          // priority
+          
+   layout="fill"
+    objectFit="contain"
+    className="brightness-50"
+    priority
         />
         <ScrollReveal className="relative z-10 text-center text-white px-4">
           <h1 className="text-5xl md:text-7xl font-bold mb-6">

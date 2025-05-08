@@ -15,7 +15,6 @@ const navigation = [
   { name: "Ayurveda", href: "/ayurveda" },
   { name: "Treatment", href: "/treatment" },
   { name: "Blog", href: "/blog" },
-  // { name: "Dosha Quiz", href: "/dosha-quiz" },
   { name: "Contact", href: "/contact" },
 ];
 
@@ -59,17 +58,12 @@ export function SiteHeader() {
             </div>
           </div>
           <div className="flex items-center space-x-4">
-            {/* <Link href="" className="https://www.facebook.com/rishiayurvedapatiala">Facebook</Link>
-            <Link href="" className="https://www.instagram.com/rishiayurvedacentre?igsh=YWZ3Z2VndWFkYm1k">Instagram</Link> */}
             <Link href="https://www.facebook.com/rishiayurvedapatiala" target="_blank" rel="noopener noreferrer" className="hover:text-[#E4B04A]">
-  Facebook
-</Link>
-
-<Link href="https://www.instagram.com/rishiayurvedacentre?igsh=YWZ3Z2VndWFkYm1k" target="_blank" rel="noopener noreferrer" className="hover:text-[#E4B04A]">
-  Instagram
-</Link>
-            {/* <Link href="#" className="hover:text-gold">LinkedIn</Link> */}
-            {/* <Link href="#" className="hover:text-gold">Blog</Link> */}
+              Facebook
+            </Link>
+            <Link href="https://www.instagram.com/rishiayurvedacentre?igsh=YWZ3Z2VndWFkYm1k" target="_blank" rel="noopener noreferrer" className="hover:text-[#E4B04A]">
+              Instagram
+            </Link>
           </div>
         </div>
       </div>
@@ -77,27 +71,32 @@ export function SiteHeader() {
       {/* Main navigation */}
       <div className="bg-white py-4 px-4 shadow-sm">
         <div className="container mx-auto flex justify-between items-center">
-          <Link href="/" className="flex items-center">
-            <span className={`text-2xl font-bold text-[#2F3B2F] ${scrolled ? '' : 'text-white'}`}>Holistic Healing Center</span>
-          </Link>
+          {/* Left-aligned site title */}
+          <div className="text-2xl md:text-3xl font-bold text-[#2F3B2F] whitespace-nowrap pr-8">
+            Rishi Ayurved Centre
+          </div>
 
-          <NavigationMenu>
-            <NavigationMenuList className="hidden md:flex space-x-8">
-              {navigation.map((item) => (
-                <NavigationMenuItem key={item.name}>
-                  <Link
-                    href={item.href}
-                    className={`text-[#2F3B2F] hover:text-[#E4B04A] ${
-                      pathname === item.href ? 'font-bold' : ''
-                    }`}
-                  >
-                    {item.name}
-                  </Link>
-                </NavigationMenuItem>
-              ))}
-            </NavigationMenuList>
-          </NavigationMenu>
+          {/* Centered navigation menu */}
+          <div className="flex items-center space-x-6">
+            <NavigationMenu>
+              <NavigationMenuList className="hidden md:flex space-x-6">
+                {navigation.map((item) => (
+                  <NavigationMenuItem key={item.name}>
+                    <Link
+                      href={item.href}
+                      className={`text-[#2F3B2F] hover:text-[#E4B04A] ${
+                        pathname === item.href ? 'font-bold' : ''
+                      }`}
+                    >
+                      {item.name}
+                    </Link>
+                  </NavigationMenuItem>
+                ))}
+              </NavigationMenuList>
+            </NavigationMenu>
+          </div>
 
+          {/* Right-aligned button */}
           <Button className="bg-[#E4B04A] hover:bg-[#c99b3f] text-white">
             ONLINE CONSULTATION
           </Button>
@@ -135,4 +134,3 @@ export function SiteHeader() {
     </motion.header>
   )
 }
-
