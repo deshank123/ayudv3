@@ -72,7 +72,7 @@ export function SiteHeader() {
       <div className="bg-white py-4 px-4 shadow-sm">
         <div className="container mx-auto flex justify-between items-center">
           {/* Left-aligned site title */}
-          <div className="text-2xl md:text-3xl font-bold text-[#2F3B2F] whitespace-nowrap pr-8">
+          <div className="text-10xl md:text-5xl font-bold text-[#2F3B2F] whitespace-nowrap pr-8">
             Rishi Ayurved Centre
           </div>
 
@@ -84,7 +84,7 @@ export function SiteHeader() {
                   <NavigationMenuItem key={item.name}>
                     <Link
                       href={item.href}
-                      className={`text-[#2F3B2F] hover:text-[#E4B04A] ${
+                      className={`text-lg md:text-xl text-[#2F3B2F] hover:text-[#E4B04A] ${
                         pathname === item.href ? 'font-bold' : ''
                       }`}
                     >
@@ -97,9 +97,12 @@ export function SiteHeader() {
           </div>
 
           {/* Right-aligned button */}
-          <Button className="bg-[#E4B04A] hover:bg-[#c99b3f] text-white">
-            ONLINE CONSULTATION
-          </Button>
+          <Link
+  href="/contact"
+  className="bg-[#E4B04A] hover:bg-[#c99b3f] text-white font-semibold py-2 px-4 rounded transition duration-300"
+>
+  ONLINE CONSULTATION
+</Link>
         </div>
       </div>
 

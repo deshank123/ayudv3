@@ -31,8 +31,13 @@ export default function ContactPage() {
                 <CardTitle className="text-2xl font-bold text-[#2F3B2F]">Send us a message</CardTitle>
               </CardHeader>
               <CardContent>
-                <form className="space-y-4">
-                  <div>
+                {/* <form className="space-y-4"> */}
+                <form 
+  className="space-y-4"
+  action="https://formspree.io/f/mwpoqpgr" 
+  method="POST"
+>
+                  {/* <div>
                     <Input type="text" placeholder="Your Name" />
                   </div>
                   <div>
@@ -43,7 +48,19 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <Textarea placeholder="Your Message" rows={4} />
-                  </div>
+                  </div> */}
+                  <div>
+    <Input type="text" name="name" placeholder="Your Name" required />
+  </div>
+  <div>
+    <Input type="email" name="email" placeholder="Your Email" required />
+  </div>
+  <div>
+    <Input type="tel" name="phone" placeholder="Your Phone" />
+  </div>
+  <div>
+    <Textarea name="message" placeholder="Your Message" rows={4} required />
+  </div>
                   <Button type="submit" className="bg-[#E4B04A] hover:bg-[#c99b3f] text-white w-full">
                     Send Message
                   </Button>

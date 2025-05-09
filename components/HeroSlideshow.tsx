@@ -15,7 +15,8 @@ const slides = [
     serviceDescription: "Traditional detoxification and reju  venation treatments"
   },
   {
-    image: "https://images.unsplash.com/photo-1552693673-1bf958298935",
+    // image: "https://images.unsplash.com/photo-1552693673-1bf958298935",
+    image: "/aboutus/clinic_photo.jpeg",
     title: "Personalized Ayurvedic Care",
     description: "Customized treatment plans based on your unique constitution",
     service: "Pulse Diagnosis",
